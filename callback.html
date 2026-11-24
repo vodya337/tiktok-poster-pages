@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TikTok authorization</title></head>
+<body style="font-family:system-ui,sans-serif;max-width:720px;margin:2rem auto;padding:0 1rem">
+<h1>TikTok authorization</h1>
+<p id="msg">Processing...</p>
+<script>
+var p=new URLSearchParams(location.search);
+document.getElementById('msg').textContent=p.get('code')?'Authorization received. You can close this page.':(p.get('error')?'Authorization failed: '+p.get('error'):'No authorization code in this request.');
+</script>
+</body></html>
